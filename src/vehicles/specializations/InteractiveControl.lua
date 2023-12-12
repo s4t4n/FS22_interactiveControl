@@ -615,12 +615,14 @@ function InteractiveControl:onUpdateTick(dt, isActiveForInput, isActiveForInputI
 
         if isOutdoor then
             self:updateInteractiveControls(isIndoor, isOutdoor, isActiveForInputIgnoreSelection)
+			-- show an aimcross when the hud is disabled, outdoor
 			if self:getState() then
 				renderText(0.5, 0.5, 0.018, "+")
 			end
         -- elseif g_noHudModeEnabled and isIndoor or isOutdoor then
         elseif isIndoor or isOutdoor then
             self:updateInteractiveControls(isIndoor, isOutdoor, isActiveForInputIgnoreSelection)
+			-- show an aimcross when the hud is disabled, indoor
 			if self:getState() then
 				renderText(0.5, 0.5, 0.018, "+")
 			end
